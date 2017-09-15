@@ -1,97 +1,48 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pen and Paper Charactersheets</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <!-- Angular Material-->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-  <!-- mobile Angular UI-->
-  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css"/>
-  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css"/>
-  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css"/>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.6.1';i.angular='4.1.3';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
 
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- Sidebar -->
-<sidebar></sidebar>
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
 
-<!-- App -->
-<div class="app">
-  <div class="navbar navbar-app navbar-absolute-top">
-    <div class="navbar-brand navbar-brand-center" ng-bind="headline">
-    </div>
-    <div class="btn-group pull-left">
-      <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
-        <i class="fa fa-bars"></i>
-      </div>
-    </div>
-  </div>
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
 
-  <!-- App body -->
-  <div class='app-body'>
-    <div class='app-content'>
-      <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a
-              href="http://browsehappy.com/">upgrade
-        your browser</a> to improve your experience.</p>
-      <![endif]-->
-      <div ng-view></div>
-    </div>
-  </div>
-</div>
-<!-- ~ .app -->
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <!-- Angular Material requires Angular.js Libraries -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
-  <!-- Angular Material Library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
-
-  <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
-
-  <script type="text/javascript" src="resources/ds/dsClass.json"></script>
-  <script type="text/javascript" src="resources/ds/dsRace.json"></script>
-  <script type="text/javascript" src="resources/ds/dsTalent.json"></script>
-
-  <script src="app.js"></script>
-
-  <script src="services/characterListService.js"></script>
-  <script src="services/loadJsonService.js"></script>
-  <script src="services/characterService.js"></script>
-
-  <script src="menu/menuController.js"></script>
-  <script src="menu/menuDirective.js"></script>
-
-  <script src="favorites/favoritesController.js"></script>
-
-  <script src="ds/dsController.js"></script>
-  <script src="ds/dsDirectives.js"></script>
-
-  <script src="dsCharacterSheet/dsCharacterSheetController.js"></script>
-  <script src="dsCharacterSheet/dsCharacterSheetDirectives.js"></script>4
-
-  <script src="cthulhu/cthulhuController.js"></script>
-  <script src="cthulhu/cthulhuDirectives.js"></script>
 </body>
 </html>
