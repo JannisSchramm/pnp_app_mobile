@@ -17,7 +17,8 @@
         "protractor": "^4.0.9"
     },
     "scripts": {
-        "postinstall": "bower install",
+        "deploy-android-device": "export ANDROID_HOME=/home/jannis/Android/Sdk && cordova run android --device",
+        "postinstall": "bower install && cp -a ./bower_components ./www",
         "update-deps": "npm update",
         "postupdate-deps": "bower update",
         "prestart": "npm install",
