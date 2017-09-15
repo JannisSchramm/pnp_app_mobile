@@ -1,0 +1,101 @@
+<div ng-show="showNew" style="width: 100%">
+    <div class="dark-overlay" ng-click="showNew = false">
+    </div>
+    <div class="scrollable new-character">
+        <div class="scrollable-content">
+            <h3>
+                Neuer Charakter
+            </h3>
+            <hr/>
+            <form>
+                Name:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newName">
+                Volk:
+                <select class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" ng-model="newRace">
+                    <option ng-repeat="race in races" value={{race.name}}>{{race.name}}</option>
+                </select>
+                Klasse:
+                <select class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" ng-model="newClass">
+                    <option ng-repeat="class in classes" value={{class.name}}>{{class.name}}</option>
+                </select>
+                Level:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newLvl" min="1" max="20">
+                Erfahrung:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newExperience">
+                <hr/>
+                Geschlecht:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newSex">
+                Geburtsort:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newBirthplace">
+                Geburtstag:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newBirthday">
+                Alter:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newAge">
+                Grösse:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newHeight">
+                Gewicht:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newWeight">
+                Haarfarbe:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newHair">
+                Augenfarbe:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newEyes">
+                Besonderes:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newSpecial">
+                Sprachen:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newLanguages">
+                Schriftzeichen:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newWriting">
+                <hr/>
+                Körper:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newBody">
+                Stärke:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newStrength">
+                Härte:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newHardness">
+                <hr/>
+                Agilität:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newAgility">
+                Bewegung:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newMovement">
+                Geschick:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newDexterity">
+                <hr/>
+                Geist:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newSpirit">
+                Verstand:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newMind">
+                Aura:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newAura">
+                <hr/>
+                Notizen:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newNotes">
+                <hr/>
+                <button class="btn btn-primary btn-block" ng-click="saveNewChar()">Speichern</button>
+            </form>
+        </div>
+    </div>
+</div>

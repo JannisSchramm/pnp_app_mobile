@@ -1,0 +1,41 @@
+/* app css stylesheet */
+
+.inline-header {
+  display: inline;
+}
+
+.btn-right {
+  display: inline;
+  float: right;
+  height: 100%;
+}
+
+.dark-overlay {
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.7);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.scrollable.new-character {
+  z-index: 101;
+  width: 90%;
+  max-height: 94%;
+  margin: 3% auto;
+  background-color: white;
+  border-radius: 2%;
+  padding: 2%;
+}
+
+.cthulhu-attribute {
+  display: inline-block;
+  width: 31%;
+  margin: 1%;
+}
+
+.cthulhu-ability {
+  display: inline-block;
+  width: 23%;
+  margin: 1%;
+}

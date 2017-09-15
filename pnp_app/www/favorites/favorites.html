@@ -1,0 +1,20 @@
+<br/>
+<div class="panel-group" ui-state="myAccordion">
+    <div class="panel panel-default" ng-repeat="character in favorites">
+        <div class="panel-heading" ui-set="{'myAccordion': character.id}">
+            <h4 class="panel-titlev inline-header">
+                {{character.name}}
+            </h4>
+            <button class="btn btn-primary btn-right" ng-click="removeFavorite(character.id)">-</button>
+        </div>
+        <div ui-if="myAccordion == {{character.id}}">
+            <div class="panel-body">
+                Spiel: {{character.game}} <br/>
+                Volk: {{character.race}} <br/>
+                Klasse: {{character.class}} <br/>
+                Level: {{character.lvl}} <br/>
+                <button class="btn btn-primary btn-block" ng-click="showCharacter(character.id)">Nutzen</button>
+            </div>
+        </div>
+    </div>
+</div>

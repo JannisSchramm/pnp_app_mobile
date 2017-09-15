@@ -1,0 +1,11 @@
+{
+  "name": "Pen and Paper App",
+  "short_name": "Pen and Paper App",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

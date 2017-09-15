@@ -1,0 +1,22 @@
+<cthulhu-new-char></cthulhu-new-char>
+<br/>
+<button class="btn btn-primary btn-block" ng-click="showNew = true">Neuer Charakter</button>
+<br/>
+<div class="panel-group" ui-state="myAccordion">
+    <div class="panel panel-default" ng-repeat="character in characters">
+        <div class="panel-heading" ui-set="{'myAccordion': character.id}">
+            <h4 class="panel-titlev inline-header">
+                {{character.name}}
+            </h4>
+            <button class="btn btn-primary btn-right" ng-click="removeCharacter(character.id)">-</button>
+        </div>
+        <div ui-if="myAccordion == {{character.id}}">
+            <div class="panel-body">
+                Spiel: {{character.game}} <br/>
+                Beruf: {{character.profession}} <br/>
+                <button class="btn btn-primary btn-block" ng-click="showCharacter(character.id)">Nutzen</button>
+                <button class="btn btn-primary btn-block" ng-click="addFavorite(character.id)">Favorit hinzufügen</button>
+            </div>
+        </div>
+    </div>
+</div>

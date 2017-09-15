@@ -1,0 +1,108 @@
+<div ng-show="showNew" style="width: 100%">
+    <div class="dark-overlay" ng-click="showNew = false">
+    </div>
+    <div class="scrollable new-character">
+        <div class="scrollable-content">
+            <h3>
+                Neuer Charakter
+            </h3>
+            <hr/>
+            <form>
+                Name:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newName">
+                Beruf:
+                <select class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" ng-model="newProfession">
+                    <option ng-repeat="profession in professions" value={{profession.name}}>{{profession.name}}</option>
+                </select>
+                Alter:
+                <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newAge">
+                Geburtstag:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newBirthday">
+                Geschlecht:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newSex">
+                Wohnort:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newResidence">
+                Geburtsort:
+                <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                       ng-model="newBirthplace">
+                <hr>
+                <div class="cthulhu-attribute">
+                    STärke:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newStrength">
+                </div>
+                <div class="cthulhu-attribute">
+                    GEschicklichkeit:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newDexterity">
+                </div>
+                <div class="cthulhu-attribute">
+                    MAna:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newMana">
+                </div>
+                <div class="cthulhu-attribute">
+                    KOnstitution:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newKonstitution">
+                </div>
+                <div class="cthulhu-attribute">
+                    ERscheinung:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newLook">
+                </div>
+                <div class="cthulhu-attribute">
+                    BIldung:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newEducation">
+                </div>
+                <div class="cthulhu-attribute">
+                    GRöße:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newHeight">
+                </div>
+                <div class="cthulhu-attribute">
+                    INtelligenz:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newIntelligence">
+                </div>
+                <div class="cthulhu-attribute">
+                    Glück:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                           ng-model="newLuck">
+                </div>
+                <hr>
+                <div class="cthulhu-ability" ng-repeat="ability in abilities[0].ability">
+                    {{ability.name}}:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" min={{ability.startValue}}
+                           value={{ability.startValue}} ng-model=ability.value>
+                </div>
+                <br>
+                <div ng-repeat="category in abilities[1].category">
+                    {{category.name}}:
+                    <br>
+                    <div class="cthulhu-ability" ng-repeat="ability in category.abilities">
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty"
+                               placeholder={{category.name}} ng-model=ability.name if>
+                        <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" min={{category.startValue}}
+                               value={{category.startValue}} ng-model=ability.value>
+                    </div>
+                    <button class="btn btn-primary btn-block" ng-click="category.abilities.push({})">+</button>
+                </div>
+                <br>
+                <div class="cthulhu-ability" ng-repeat="ability in abilities[2].fight">
+                    {{ability.name}}:
+                    <input type="number" class="form-control ng-pristine ng-untouched ng-valid needsclick ng-not-empty" min={{ability.startValue}}
+                           value={{ability.startValue}} ng-model=ability.value>
+                </div>
+                <hr>
+                <button class="btn btn-primary btn-block" ng-click="saveNewChar()">Speichern</button>
+            </form>
+        </div>
+    </div>
+</div>
